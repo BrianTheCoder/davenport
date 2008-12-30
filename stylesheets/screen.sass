@@ -1,0 +1,147 @@
+@import base
+
+body
+  +blueprint-typography
+  +blueprint-interaction
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif
+  color: #222
+.container
+  +container
+  width: 800px
+form
+  +blueprint-form
+  .row
+    margin-bottom: 1em
+    .hint
+      font-size: 0.9em
+      line-height: 0.9em
+      color: #666
+    label
+      text-transform: uppercase
+      line-height: 1em
+      font-size: 1.1em
+      font-family: Gill Sans,Verdana,sans-serif
+table#posts
+  td.action
+    width: 100px
+    text-align: center
+input#post_title, textarea#post_body, input#post_tags
+  width: 690px
+  
+#header
+  text-align: center
+  border-bottom: 2px solid #222
+  padding-bottom: 3px
+  .intro
+    text-transform: uppercase
+    font-family: Times New Roman, serif
+  h1
+    text-transform: uppercase
+    font-weight: bold
+    font-family: Tahoma
+    letter-spacing: 5px
+    font-size: 5.2em
+    line-height: 0.8em
+    margin: 0 0 5px
+  .tagline
+    font-family: Georgia, Times New Roman, serif
+    font-size: 1.7em
+    text-transform: uppercase
+    letter-spacing: 4px
+    line-height: 1.1em
+    word-spacing: 13px
+div#posts 
+  border-top: 3px double #222
+  .post
+    overflow: hidden
+    margin-top: 1em
+    .info
+      float: left
+      width: 100px
+      margin-right: 10px
+      text-align: center
+      line-height: 1em
+      .day
+        text-transform: uppercase
+        font-weight: bold
+        letter-spacing: 2px
+        font-size: 1.2em
+      .date
+        margin-bottom: 3px
+        font-family: Georgia, serif
+        font-size: 1.1em
+        letter-spacing: 1px
+        line-height: 0.9em
+      .month
+        text-transform: uppercase
+        font-family: Impact, sans serif
+        font-size: 1.1em
+        letter-spacing: 3px
+      .year
+        font-size: 2.5em
+        line-height: .9em
+        font-weight: bold
+        letter-spacing: 3px
+    .comment
+      margin-top: .5em
+      border-top: 1px solid #222
+      padding: .1em 0 .5em
+      border-bottom: 2px solid #222
+      .count
+        font-size: 2em
+        line-height: .8em
+        font-family: Georgia, serif
+        letter-spacing: 5px
+      .text
+        font-family: Helvetica, Arial, sans-serif
+        font-variant: small-caps
+        line-height: .9em
+        font-size: 109%
+  .body
+    float: left
+    width: 690px
+    h2
+      margin: 0
+      font-family: Georgia, Times New Roman, serif
+      margin-bottom: .3em
+      line-height: 0.9em
+      text-transform: capitalize
+      a
+        color: #444
+        line-height: 0.9em
+        &:hover
+          background: #ccc
+    .text
+      font-family: Trebuchet MS, Arial, sans serif
+      font-size: 0.9em
+      text-align: justify
+      width: 690px
+#post
+  border-bottom: 1px solid #222
+  h2
+    font-family: Georgia, Times New Roman, serif
+    font-size: 3em
+    text-align: center
+    line-height: 0.9em
+    text-transform: capitalize
+    margin: 0 40px
+    border-bottom: 1px solid #222
+    letter-spacing: 3px
+    word-spacing: 5px
+  .date
+    text-align: center
+    margin: 0 40px 3px
+    line-height: 1.1em
+    font-family: Georgia, Times New Roman, serif
+    font-variant: small-caps
+    font-size: 1.5em
+    border-top: 3px double #222
+    border-bottom: 1px solid #222
+    letter-spacing: 3px
+    word-spacing: 7px
+  .text
+    margin: 0 40px
+    font-family: Trebuchet MS, Arial, sans serif
+    text-align: justify
+    font-size: 0.9em
+    margin-bottom: 1em

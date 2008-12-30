@@ -1,0 +1,8 @@
+#header
+  .intro The Writings of
+  %h1 BrianTheCoder
+  .tagline Get ready to have your mind blown
+#post
+  %h2=@post.title
+  .date="#{@post.created_at.strftime('%A')} the #{@post.created_at.strftime('%d').to_i.ordinalize} day of #{@post.created_at.strftime('%B')} #{@post.created_at.strftime('%Y')}"
+  .text=@post.body

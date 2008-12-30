@@ -1,0 +1,18 @@
+#header
+  .intro The Writings of
+  %h1 BrianTheCoder
+  .tagline Get ready to have your mind blown
+#posts
+  -@posts.each do |post|
+    .post
+      .info
+        .day=post.created_at.strftime('%A')
+        .date="#{post.created_at.strftime('%d').to_i.ordinalize} day of"
+        .month=post.created_at.strftime('%B')
+        .year=post.created_at.strftime('%Y')
+        .comment
+          .count 20
+          .text have spoken
+      .body
+        %h2=link_to post.title, url(:post, post.id)
+        .text=post.body

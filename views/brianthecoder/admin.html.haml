@@ -1,0 +1,19 @@
+=link_to "+ New Post", url(:new_post)
+-@posts.each do |post|
+  %table#posts.tablesorter
+    %thead
+      %tr
+        %th Title
+        %th Posted at
+        %th Tags
+        %th Action
+    %tbody
+      %tr
+        %td=post.title
+        %td=post.created_at.strftime("%D %H:%m")
+        %td=post.tags.join(', ')
+        %td.action
+          =link_to "edit", url(:edit_post, post.id)
+          \/
+          =link_to "delete", url(:post, post.id), :class => "delete"
+=partial "admin"

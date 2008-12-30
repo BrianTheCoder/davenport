@@ -1,0 +1,448 @@
+
+html, body {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-weight: inherit;
+  font-style: inherit;
+  font-size: 100%;
+  font-family: inherit;
+  vertical-align: baseline; }
+
+div, span, object, iframe, h1, h2, h3, h4, h5, h6, p,
+pre, a, abbr, acronym, address, code, del, dfn, em, img,
+dl, dt, dd, ol, ul, li, fieldset, form, label, legend, caption, tbody, tfoot, thead, tr {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-weight: inherit;
+  font-style: inherit;
+  font-size: 100%;
+  font-family: inherit;
+  vertical-align: baseline; }
+
+body {
+  line-height: 1.5; }
+
+blockquote, q {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-weight: inherit;
+  font-style: inherit;
+  font-size: 100%;
+  font-family: inherit;
+  vertical-align: baseline;
+  quotes: "" ""; }
+  blockquote:before,
+  blockquote:after,   q:before,
+  q:after {
+    content: ""; }
+
+th, td, caption {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-weight: inherit;
+  font-style: inherit;
+  font-size: 100%;
+  font-family: inherit;
+  vertical-align: baseline;
+  text-align: left;
+  font-weight: normal;
+  vertical-align: middle; }
+
+table {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-weight: inherit;
+  font-style: inherit;
+  font-size: 100%;
+  font-family: inherit;
+  vertical-align: baseline;
+  border-collapse: separate;
+  border-spacing: 0;
+  vertical-align: middle; }
+
+a img {
+  border: none; }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+@import url(blueprint/form.css);
+
+body {
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  color: #222; }
+  body body {
+    font-family: Helvetica Neue, Helvetica, Arial, sans-serif;
+    color: #333333;
+    font-size: 75%; }
+  body h1 {
+    font-weight: normal;
+    color: #222222;
+    font-size: 3em;
+    line-height: 1;
+    margin-bottom: 0.5em; }
+    body h1 img {
+      margin: 0; }
+  body h2 {
+    font-weight: normal;
+    color: #222222;
+    font-size: 2em;
+    margin-bottom: 0.75em; }
+  body h3 {
+    font-weight: normal;
+    color: #222222;
+    font-size: 1.5em;
+    line-height: 1;
+    margin-bottom: 1em; }
+  body h4 {
+    font-weight: normal;
+    color: #222222;
+    font-size: 1.2em;
+    line-height: 1.25;
+    margin-bottom: 1.25em;
+    height: 1.25em; }
+  body h5 {
+    font-weight: normal;
+    color: #222222;
+    font-size: 1em;
+    font-weight: bold;
+    margin-bottom: 1.5em; }
+  body h6 {
+    font-weight: normal;
+    color: #222222;
+    font-size: 1em;
+    font-weight: bold; }
+  body h2 img, body h3 img, body h4 img, body h5 img, body h6 img {
+    margin: 0; }
+  body p {
+    margin: 0 0 1.5em; }
+    body p img {
+      float: left;
+      margin: 1.5em 1.5em 1.5em 0;
+      padding: 0; }
+      body p img.right {
+        float: right;
+        margin: 1.5em 0 1.5em 1.5em; }
+  body a {
+    text-decoration: underline;
+    color: #000099; }
+    body a:visited {
+      color: #000066; }
+    body a:focus {
+      color: #000000; }
+    body a:hover {
+      color: #000000; }
+    body a:active {
+      color: #cc0099; }
+  body blockquote {
+    margin: 1.5em;
+    color: #666;
+    font-style: italic; }
+  body strong {
+    font-weight: bold; }
+  body em {
+    font-style: italic; }
+  body dfn {
+    font-style: italic;
+    font-weight: bold; }
+  body sup, body sub {
+    line-height: 0; }
+  body abbr, body acronym {
+    border-bottom: 1px dotted #666; }
+  body address {
+    margin: 0 0 1.5em;
+    font-style: italic; }
+  body del {
+    color: #666; }
+  body pre, body code {
+    margin: 1.5em 0;
+    white-space: pre;
+    font: 1em 'andale mono', 'lucida console', monospace;
+    line-height: 1.5; }
+  body tt {
+    font: 1em 'andale mono', 'lucida console', monospace;
+    line-height: 1.5; }
+  body li ul, body li ol {
+    margin: 0 1.5em; }
+  body ul {
+    margin: 0 1.5em 1.5em 1.5em;
+    list-style-type: disc; }
+  body ol {
+    margin: 0 1.5em 1.5em 1.5em;
+    list-style-type: decimal; }
+  body dl {
+    margin: 0 0 1.5em 0; }
+    body dl dt {
+      font-weight: bold; }
+  body dd {
+    margin-left: 1.5em; }
+  body table {
+    margin-bottom: 1.4em;
+    width: 100%; }
+  body th {
+    font-weight: bold;
+    background: #C3D9FF;
+    padding: 4px 10px 4px 5px; }
+  body td {
+    padding: 4px 10px 4px 5px; }
+  body tr.even td {
+    background: #E5ECF9; }
+  body tfoot {
+    font-style: italic; }
+  body caption {
+    background: #eee; }
+  body .quiet {
+    color: #666666; }
+  body .loud {
+    color: #111111; }
+  body .error {
+    padding: .8em;
+    margin-bottom: 1em;
+    border: 2px solid #dddddd;
+    background: #fbe3e4;
+    color: #8a1f11;
+    border-color: #fbc2c4; }
+    body .error a {
+      color: #8a1f11; }
+  body .notice {
+    padding: .8em;
+    margin-bottom: 1em;
+    border: 2px solid #dddddd;
+    background: #fff6bf;
+    color: #514721;
+    border-color: #ffd324; }
+    body .notice a {
+      color: #514721; }
+  body .success {
+    padding: .8em;
+    margin-bottom: 1em;
+    border: 2px solid #dddddd;
+    background: #e6efc2;
+    color: #264409;
+    border-color: #c6d880; }
+    body .success a {
+      color: #264409; }
+  body .hide {
+    display: none; }
+  body .highlight {
+    background: #ffff00; }
+  body .added {
+    background: #006600;
+    color: #ffffff; }
+  body .removed {
+    background: #990000;
+    color: #ffffff; }
+
+.container {
+  width: 950px;
+  margin: 0 auto;
+  overflow: auto;
+  overflow: -moz-scrollbars-none;
+  display: inline-block;
+  width: 800px; }
+  .container {
+    display: block; }
+
+form label {
+  font-weight: bold; }
+form fieldset {
+  padding: 1.4em;
+  margin: 0 0 1.5em 0;
+  border: 1px solid #ccc; }
+form legend {
+  font-weight: bold;
+  font-size: 1.2em; }
+form input.text {
+  margin: 0.5em 0;
+  border: 1px solid #bbb;
+  width: 300px;
+  padding: 5px; }
+  form input.text:focus {
+    border: 1px solid #666; }
+form input.title {
+  font-size: 1.5em; }
+form input.title {
+  margin: 0.5em 0;
+  border: 1px solid #bbb;
+  width: 300px;
+  padding: 5px; }
+  form input.title:focus {
+    border: 1px solid #666; }
+form textarea {
+  margin: 0.5em 0;
+  border: 1px solid #bbb; }
+  form textarea:focus {
+    border: 1px solid #666; }
+form select {
+  margin: 0.5em 0;
+  border: 1px solid #bbb; }
+  form select:focus {
+    border: 1px solid #666; }
+form textarea {
+  width: 390px;
+  height: 250px;
+  padding: 5px; }
+form .row {
+  margin-bottom: 1em; }
+  form .row .hint {
+    font-size: 0.9em;
+    line-height: 0.9em;
+    color: #666; }
+  form .row label {
+    text-transform: uppercase;
+    line-height: 1em;
+    font-size: 1.1em;
+    font-family: Gill Sans,Verdana,sans-serif; }
+
+table#posts td.action {
+  width: 100px;
+  text-align: center; }
+
+input#post_title, textarea#post_body, input#post_tags {
+  width: 690px; }
+
+#header {
+  text-align: center;
+  border-bottom: 2px solid #222;
+  padding-bottom: 3px; }
+  #header .intro {
+    text-transform: uppercase;
+    font-family: Times New Roman, serif; }
+  #header h1 {
+    text-transform: uppercase;
+    font-weight: bold;
+    font-family: Tahoma;
+    letter-spacing: 5px;
+    font-size: 5.2em;
+    line-height: 0.8em;
+    margin: 0 0 5px; }
+  #header .tagline {
+    font-family: Georgia, Times New Roman, serif;
+    font-size: 1.7em;
+    text-transform: uppercase;
+    letter-spacing: 4px;
+    line-height: 1.1em;
+    word-spacing: 13px; }
+
+div#posts {
+  border-top: 3px double #222; }
+  div#posts .post {
+    overflow: hidden;
+    margin-top: 1em; }
+    div#posts .post .info {
+      float: left;
+      width: 100px;
+      margin-right: 10px;
+      text-align: center;
+      line-height: 1em; }
+      div#posts .post .info .day {
+        text-transform: uppercase;
+        font-weight: bold;
+        letter-spacing: 2px;
+        font-size: 1.2em; }
+      div#posts .post .info .date {
+        margin-bottom: 3px;
+        font-family: Georgia, serif;
+        font-size: 1.1em;
+        letter-spacing: 1px;
+        line-height: 0.9em; }
+      div#posts .post .info .month {
+        text-transform: uppercase;
+        font-family: Impact, sans serif;
+        font-size: 1.1em;
+        letter-spacing: 3px; }
+      div#posts .post .info .year {
+        font-size: 2.5em;
+        line-height: .9em;
+        font-weight: bold;
+        letter-spacing: 3px; }
+    div#posts .post .comment {
+      margin-top: .5em;
+      border-top: 1px solid #222;
+      padding: .1em 0 .5em;
+      border-bottom: 2px solid #222; }
+      div#posts .post .comment .count {
+        font-size: 2em;
+        line-height: .8em;
+        font-family: Georgia, serif;
+        letter-spacing: 5px; }
+      div#posts .post .comment .text {
+        font-family: Helvetica, Arial, sans-serif;
+        font-variant: small-caps;
+        line-height: .9em;
+        font-size: 109%; }
+  div#posts .body {
+    float: left;
+    width: 690px; }
+    div#posts .body h2 {
+      margin: 0;
+      font-family: Georgia, Times New Roman, serif;
+      margin-bottom: .3em;
+      line-height: 0.9em;
+      text-transform: capitalize; }
+      div#posts .body h2 a {
+        color: #444;
+        line-height: 0.9em; }
+        div#posts .body h2 a:hover {
+          background: #ccc; }
+    div#posts .body .text {
+      font-family: Trebuchet MS, Arial, sans serif;
+      font-size: 0.9em;
+      text-align: justify;
+      width: 690px; }
+
+#post {
+  border-bottom: 1px solid #222; }
+  #post h2 {
+    font-family: Georgia, Times New Roman, serif;
+    font-size: 3em;
+    text-align: center;
+    line-height: 0.9em;
+    text-transform: capitalize;
+    margin: 0 40px;
+    border-bottom: 1px solid #222;
+    letter-spacing: 3px;
+    word-spacing: 5px; }
+  #post .date {
+    text-align: center;
+    margin: 0 40px 3px;
+    line-height: 1.1em;
+    font-family: Georgia, Times New Roman, serif;
+    font-variant: small-caps;
+    font-size: 1.5em;
+    border-top: 3px double #222;
+    border-bottom: 1px solid #222;
+    letter-spacing: 3px;
+    word-spacing: 7px; }
+  #post .text {
+    margin: 0 40px;
+    font-family: Trebuchet MS, Arial, sans serif;
+    text-align: justify;
+    font-size: 0.9em;
+    margin-bottom: 1em; }

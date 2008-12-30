@@ -1,0 +1,20 @@
+=error_messages_for @post
+=form_for @post, :action => url(:post), :method => :put do
+  .row
+    %label{:for => "post_title"} Title
+    .hint Your awesome name to entice the masses
+    =text_field :title
+  .row
+    %label{:for => "post_body"} Body
+    .hint What are you tryin' to say?
+    =text_area :body
+  .row
+    %label{:for => "post_tags"} Tags
+    .hint Some helpful semantic markers
+    =text_field :tags
+  .row
+    %label Category
+    .hint What is this shit about?
+    =select :category
+  .buttons=submit "Update"
+=partial "admin"
