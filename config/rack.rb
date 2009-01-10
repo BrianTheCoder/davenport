@@ -2,9 +2,9 @@ require File.join(File.dirname(__FILE__),'..','lib','rack','hapong')
 require 'rack/cache'
 
 # Test response when in development mode
-#if Merb.environment == 'development'
+# if Merb.environment == 'development'
 #  use Rack::Lint
-#end
+# end
 
 # handle OPTIONS / requests without invoking any handlers
 use Rack::HAPong
@@ -30,6 +30,10 @@ use Rack::HAPong
 #if Merb.environment == 'development'
 #  use Rack::Deflater
 #end
+# 
+# use Rack::Auth::Basic do |username, password|
+#   'secret' == password
+# end
 
 # use PathPrefix Middleware if :path_prefix is set in Merb::Config
 if prefix = ::Merb::Config[:path_prefix]

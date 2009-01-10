@@ -1,14 +1,4 @@
-class Brianthecoder < Merb::Controller
-  def index
-    @posts = Post.all(:order => [:created_at.desc])
-    render
-  end
-  
-  def show
-    @post = Post.get(params[:id])
-    render
-  end
-  
+class Admin < Application
   def create
     @post = Post.new(params[:post])
     if @post.save
@@ -27,7 +17,7 @@ class Brianthecoder < Merb::Controller
     end
   end
   
-  def admin
+  def index
     @posts = Post.all(:order => [:created_at.desc])
     render
   end
@@ -39,11 +29,6 @@ class Brianthecoder < Merb::Controller
   
   def edit
     @post = Post.get(params[:id])
-    render
-  end
-  
-  def archive
-    @posts = Post.all(:order => [:created_at.desc])
     render
   end
 end

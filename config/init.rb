@@ -16,6 +16,9 @@ Merb::BootLoader.after_app_loads do
   require Merb.root / 'lib' / 'sass-script-functions'
 end
 
-require 'lib/extensions'
+TAGLINES = ["Get ready to have your mind blown","You can't handle the awesome"]
+
+
+require 'lib/extlib'
 require 'config/router.rb'
 require 'config/dependencies.rb'

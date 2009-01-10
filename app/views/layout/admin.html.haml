@@ -1,0 +1,17 @@
+!!! Strict
+%html{html_attrs}
+  %head
+    %meta{'http-equiv' => 'Content-Type', :content => 'text/html;charset=utf-8'}/
+    =css_include_tag 'compiled/screen', "tabletheme", "markitup/style.css", :bundle => :admin
+    %title Admin
+  %body
+    %div.container
+      - [ :error, :success, :notice ].each do |type|
+        - if message[type]
+          %div{:class => type }= message[type]
+      =catch_content :for_layout
+    - if Merb.environment == 'development'
+      =js_include_tag :jquery, :application, :bundle => :base
+    - else
+      =js_include_tag "#{request.protocol}://ajax.googleapis.com/ajax/libs/jquery/1.2.6/jquery.min.js"
+      =js_include_tag :application, "jquery.tablesorter", "jquery.markitup", "admin", :bundle => :admin

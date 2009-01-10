@@ -14,7 +14,7 @@ Merb::Config.use { |c|
   c[:session_id_key]      = '_brianthecoder_session_id'
   c[:session_secret_key]  = '2552f3961c6599740f76825eb11d6bfb70c4b7c5'
   c[:compass] = {
-    :stylesheets          => 'stylesheets',
+    :stylesheets          => 'app/stylesheets',
     :compiled_stylesheets => 'public/stylesheets/compiled'
   }
 }

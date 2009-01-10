@@ -268,6 +268,10 @@ body {
   width: 800px; }
   .container {
     display: block; }
+  .container #main {
+    width: 630px;
+    float: left;
+    margin-right: 10px; }
 
 form label {
   font-weight: bold; }
@@ -342,6 +346,9 @@ input#post_title, textarea#post_body, input#post_tags {
     font-size: 5.2em;
     line-height: 0.8em;
     margin: 0 0 5px; }
+    #header h1 a {
+      color: #222;
+      text-decoration: none; }
   #header .tagline {
     font-family: Georgia, Times New Roman, serif;
     font-size: 1.7em;
@@ -350,72 +357,52 @@ input#post_title, textarea#post_body, input#post_tags {
     line-height: 1.1em;
     word-spacing: 13px; }
 
-div#posts {
-  border-top: 3px double #222; }
-  div#posts .post {
-    overflow: hidden;
-    margin-top: 1em; }
-    div#posts .post .info {
-      float: left;
-      width: 100px;
-      margin-right: 10px;
-      text-align: center;
-      line-height: 1em; }
-      div#posts .post .info .day {
-        text-transform: uppercase;
-        font-weight: bold;
-        letter-spacing: 2px;
-        font-size: 1.2em; }
-      div#posts .post .info .date {
-        margin-bottom: 3px;
-        font-family: Georgia, serif;
-        font-size: 1.1em;
-        letter-spacing: 1px;
-        line-height: 0.9em; }
-      div#posts .post .info .month {
-        text-transform: uppercase;
-        font-family: Impact, sans serif;
-        font-size: 1.1em;
-        letter-spacing: 3px; }
-      div#posts .post .info .year {
-        font-size: 2.5em;
-        line-height: .9em;
-        font-weight: bold;
-        letter-spacing: 3px; }
-    div#posts .post .comment {
-      margin-top: .5em;
-      border-top: 1px solid #222;
-      padding: .1em 0 .5em;
-      border-bottom: 2px solid #222; }
-      div#posts .post .comment .count {
-        font-size: 2em;
-        line-height: .8em;
-        font-family: Georgia, serif;
-        letter-spacing: 5px; }
-      div#posts .post .comment .text {
-        font-family: Helvetica, Arial, sans-serif;
-        font-variant: small-caps;
-        line-height: .9em;
-        font-size: 109%; }
-  div#posts .body {
+div#posts .post {
+  overflow: hidden;
+  margin: 1em 0 3em; }
+  div#posts .post .info {
     float: left;
-    width: 690px; }
-    div#posts .body h2 {
-      margin: 0;
-      font-family: Georgia, Times New Roman, serif;
-      margin-bottom: .3em;
+    width: 100px;
+    line-height: 1em;
+    font-size: 0.8em;
+    color: #999; }
+    div#posts .post .info > div {
+      margin-bottom: 0.5em; }
+    div#posts .post .info a {
+      color: #999;
+      text-decoration: none; }
+      div#posts .post .info a:hover {
+        color: #666;
+        text-decoration: underline; }
+    div#posts .post .info .published_at {
+      color: #444;
+      font-size: 1.1em;
+      border-bottom: 1px solid #ccc;
+      padding-bottom: 0.3em;
+      margin-bottom: 0.5em;
+      font-family: Georgia, Times New Roman, serif; }
+div#posts .body {
+  float: left;
+  width: 520px;
+  margin-right: 10px; }
+  div#posts .body h2 {
+    margin: 0;
+    font-family: Georgia, Times New Roman, serif;
+    margin-bottom: .3em;
+    line-height: 0.9em;
+    padding-bottom: .2em;
+    text-transform: capitalize;
+    border-bottom: 1px solid #ccc; }
+    div#posts .body h2 a {
+      color: #444;
       line-height: 0.9em;
-      text-transform: capitalize; }
-      div#posts .body h2 a {
-        color: #444;
-        line-height: 0.9em; }
-        div#posts .body h2 a:hover {
-          background: #ccc; }
-    div#posts .body .text {
-      font-family: Trebuchet MS, Arial, sans serif;
-      font-size: 0.9em;
-      text-align: justify;
-      width: 690px; }
+      text-decoration: none; }
+      div#posts .body h2 a:hover {
+        background: #ccc; }
+  div#posts .body .text {
+    font-family: Trebuchet MS, Arial, sans serif;
+    font-size: 0.9em;
+    text-align: justify; }
 
 #post {
   border-bottom: 1px solid #222; }
@@ -425,24 +412,54 @@ div#posts {
     text-align: center;
     line-height: 0.9em;
     text-transform: capitalize;
-    margin: 0 40px;
-    border-bottom: 1px solid #222;
     letter-spacing: 3px;
-    word-spacing: 5px; }
+    word-spacing: 5px;
+    margin: 0 0 .2em; }
   #post .date {
     text-align: center;
-    margin: 0 40px 3px;
-    line-height: 1.1em;
+    margin: 0 0 3px;
+    line-height: 1.5em;
     font-family: Georgia, Times New Roman, serif;
     font-variant: small-caps;
-    font-size: 1.5em;
+    font-size: 1.2em;
     border-top: 3px double #222;
     border-bottom: 1px solid #222;
     letter-spacing: 3px;
     word-spacing: 7px; }
   #post .text {
-    margin: 0 40px;
     font-family: Trebuchet MS, Arial, sans serif;
     text-align: justify;
     font-size: 0.9em;
     margin-bottom: 1em; }
+
+#sidebar {
+  float: left;
+  width: 160px;
+  margin-top: 1em; }
+  #sidebar h4 {
+    font-family: Georgia, Times New Roman, serif;
+    font-variant: small-caps;
+    line-height: 1em;
+    margin: 0 0 .5em;
+    border-bottom: 1px solid #ccc; }
+  #sidebar ul {
+    list-style: none;
+    margin: 0 0 2em;
+    font-size: 0.8em; }
+    #sidebar ul span.time {
+      float: right;
+      font-size: 0.9em;
+      line-height: 0.8em;
+      color: #999; }
+    #sidebar ul li {
+      margin-bottom: 5px;
+      overflow: hidden; }
+      #sidebar ul li a {
+        text-decoration: none;
+        color: #444;
+        line-height: 0.8em; }
+        #sidebar ul li a:hover {
+          background: #ccc; }
+      #sidebar ul li .count {
+        float: right;
+        color: #999; }
