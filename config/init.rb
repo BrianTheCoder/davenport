@@ -9,7 +9,7 @@ use_template_engine :haml
 # }
 
 Merb::BootLoader.before_app_loads do
-  DataMapper.setup(:default, "couchdb://localhost:5984/brianthecoder")
+  DataMapper.setup(:default, "couchdb://localhost:5984/davenport")
 end
  
 Merb::BootLoader.after_app_loads do
@@ -22,3 +22,5 @@ TAGLINES = ["Get ready to have your mind blown","You can't handle the awesome"]
 require 'lib/extlib'
 require 'config/router.rb'
 require 'config/dependencies.rb'
+
+#ps aux | grep merb | awk '{print $2}' | xargs kill -9

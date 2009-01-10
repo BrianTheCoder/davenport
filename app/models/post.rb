@@ -35,6 +35,17 @@ class Post
     }"
   }}
   
+  view(:category_count){{
+    "map" => "function(doc){
+      if(doc.couchdb_type == '#{self}'){
+          emit(doc.category, 1);
+      }
+    }",
+    "reduce" => "function(keys,values,combine){
+      return sum(values);
+    }"
+  }}
+  
   view(:by_tag){{
     "map" => "function(doc){
       if(doc.couchdb_type == '#{self}'){
@@ -56,9 +67,8 @@ class Post
   view(:archive_count){{
     "map" => "function(doc){
       if(doc.couchdb_type == '#{self}'){
-        var date = new Date(doc.created_at)
-        function padZero(num){ return num > 10 ? num : '0'+num }
-        emit([date.getFullYear().toString(), padZero(date.getMonth()+1)], 1)
+        var date = new Date(Date.parse(doc.published_at))
+        emit([date.getFullYear(),(date.getMonth()+1)], 1)
       }
     }",
     "reduce" => "function(keys,values,combine){
@@ -69,9 +79,8 @@ class Post
   view(:archive){{
     "map" => "function(doc){
       if(doc.couchdb_type == '#{self}'){
-        var date = new Date(doc.published_at)
-        function padZero(num){ return num > 10 ? num : '0'+num }
-        emit([date.getFullYear().toString(), padZero(date.getMonth()+1), padZero(date.getDate()), doc.slug],doc)
+        var date = new Date(Date.parse(doc.published_at))
+        emit([date.getFullYear(), (date.getMonth()+1), date.getDate(), doc.slug],doc)
       }
     }"
   }}

@@ -18,7 +18,7 @@ class Admin < Application
   end
   
   def index
-    @posts = Post.all(:order => [:created_at.desc])
+    @posts = Post.by_date(:descending => true)
     render
   end
   

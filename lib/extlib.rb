@@ -1,3 +1,18 @@
+class Fixnum
+  def ordinalize
+    if (11..13).include?(self % 100)
+      "#{self}th"
+    else
+      case self % 10
+        when 1; "#{self}st"
+        when 2; "#{self}nd"
+        when 3; "#{self}rd"
+        else    "#{self}th"
+      end
+    end
+  end
+end
+
 class Array
   def groups(number)
     group_size = self.size / number
@@ -55,7 +70,6 @@ end
 
 class DateTime
   def to_json
-    to_time.utc
-    %Q("#{strftime "%Y/%m/%d %H:%M:%S +0000"}")
+    %Q("#{strftime("%Y/%m/%d %H:%M:%S")} #{zone}")
   end
 end

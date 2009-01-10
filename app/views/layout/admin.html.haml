@@ -2,7 +2,7 @@
 %html{html_attrs}
   %head
     %meta{'http-equiv' => 'Content-Type', :content => 'text/html;charset=utf-8'}/
-    =css_include_tag 'compiled/screen', "tabletheme", "markitup/style.css", :bundle => :admin
+    =css_include_tag 'compiled/admin', "tabletheme", "markitup/style.css", :bundle => :admin
     %title Admin
   %body
     %div.container
@@ -11,7 +11,7 @@
           %div{:class => type }= message[type]
       =catch_content :for_layout
     - if Merb.environment == 'development'
-      =js_include_tag :jquery, :application, :bundle => :base
+      =js_include_tag :jquery, "jquery.tablesorter", "jquery.markitup", "admin", :bundle => :base
     - else
       =js_include_tag "#{request.protocol}://ajax.googleapis.com/ajax/libs/jquery/1.2.6/jquery.min.js"
-      =js_include_tag :application, "jquery.tablesorter", "jquery.markitup", "admin", :bundle => :admin
+      =js_include_tag "jquery.tablesorter", "jquery.markitup", "admin", :bundle => :admin

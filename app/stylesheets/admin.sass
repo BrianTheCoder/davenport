@@ -1,0 +1,30 @@
+@import base
+
+body
+  +blueprint-typography
+  +blueprint-interaction
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif
+  color: #222
+.container
+  +container
+  form
+    +blueprint-form
+    .row
+      margin-bottom: 1em
+      .hint
+        font-size: 0.9em
+        line-height: 0.9em
+        color: #666
+      label
+        text-transform: uppercase
+        line-height: 1em
+        font-size: 1.1em
+        font-family: Gill Sans,Verdana,sans-serif
+  table#posts
+    td.action
+      width: 100px
+      text-align: center
+    td.published
+      width: 100px
+  input#post_title, textarea#post_body, input#post_tags
+    width: 690px

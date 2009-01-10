@@ -1,5 +1,5 @@
 =error_messages_for @post
-=form_for @post, :action => url(:post), :method => :put do
+=form_for @post, :action => url(:admin_post,@post.id), :method => :put do
   .row
     %label{:for => "post_title"} Title
     .hint Your awesome name to entice the masses
@@ -15,5 +15,5 @@
   .row
     %label Category
     .hint What is this shit about?
-    =select :category
+    =select :category, :collection => Post.category_count(:group => true).map{|row| row.key}.zip
   .buttons=submit "Update"

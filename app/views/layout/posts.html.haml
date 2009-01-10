@@ -14,8 +14,9 @@
       #main=catch_content :for_layout
       #sidebar
         =part PostsPart => :archive_list
-        =part PostsPart => :recent_posts
+        =part PostsPart => :category_list
         =part PostsPart => :tag_list
+        =part PostsPart => :recent_posts
     - if Merb.environment == 'development'
       =js_include_tag :jquery, :application, :bundle => :base
     - else

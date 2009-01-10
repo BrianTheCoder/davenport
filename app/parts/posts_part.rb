@@ -14,5 +14,9 @@ class PostsPart < Merb::PartController
     @archive = Post.archive_count(:group => true)
     render
   end
-
+  
+  def category_list
+    @categories = Post.category_count(:group => true)
+    render
+  end
 end

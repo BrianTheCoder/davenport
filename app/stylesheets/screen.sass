@@ -12,25 +12,6 @@ body
     width: 630px
     float: left
     margin-right: 10px
-form
-  +blueprint-form
-  .row
-    margin-bottom: 1em
-    .hint
-      font-size: 0.9em
-      line-height: 0.9em
-      color: #666
-    label
-      text-transform: uppercase
-      line-height: 1em
-      font-size: 1.1em
-      font-family: Gill Sans,Verdana,sans-serif
-table#posts
-  td.action
-    width: 100px
-    text-align: center
-input#post_title, textarea#post_body, input#post_tags
-  width: 690px
 #header
   text-align: center
   border-bottom: 2px solid #222
@@ -100,19 +81,17 @@ div#posts
         &:hover
           background: #ccc
     .text
-      font-family: Trebuchet MS, Arial, sans serif
       font-size: 0.9em
+      color: #555
       text-align: justify
 #post
-  border-bottom: 1px solid #222
+  margin-top: 1em
   h2
     font-family: Georgia, Times New Roman, serif
-    font-size: 3em
+    font-size: 1.7em
     text-align: center
-    line-height: 0.9em
+    line-height: 1.1em
     text-transform: capitalize
-    letter-spacing: 3px
-    word-spacing: 5px
     margin: 0 0 .2em
   .date
     text-align: center
@@ -126,9 +105,9 @@ div#posts
     letter-spacing: 3px
     word-spacing: 7px
   .text
-    font-family: Trebuchet MS, Arial, sans serif
     text-align: justify
     font-size: 0.9em
+    color: #555
     margin-bottom: 1em
 #sidebar
   float: left
@@ -150,14 +129,61 @@ div#posts
       line-height: 0.8em
       color: #999
     li 
-      margin-bottom: 5px
+      margin-bottom: 0.5em
       overflow: hidden
       a
         text-decoration: none
+        display: block
         color: #444
-        line-height: 0.8em
         &:hover
           background: #ccc
       .count
         float: right
         color: #999
+#archive
+  margin-top: 1em
+  h3, h4
+    font-family: Georgia, Times New Roman, serif
+    margin: 0 0 0.5em
+    font-variant: small-caps
+    border-bottom: 1px solid #ccc
+  & > ul
+    list-style: none
+    margin: 0 0 2em
+    font-size: 0.75em
+    li
+      margin-bottom: 0.6em
+      overflow: hidden
+      .date
+        width: 80px
+        margin-right: 10px
+        float: left
+        text-align: right
+        font-size: 1.5em
+        line-height: 0.8em
+        color: #999
+        font-variant: small-caps
+        font-family: Georgia, Times New Roman, serif
+      a
+        float: left
+        width: 540px
+        text-decoration: none
+        color: #444
+        display: block
+        line-height: 1.1em
+        &:hover
+          background: #ccc
+      & > ul
+        float:left
+        width: 540px
+        margin-left: 90px
+        li 
+          .date
+            width: 40px
+            text-align: right
+            margin-right: 10px
+            float: left
+          & > ul
+            float:left
+            width: 490px
+            margin-left: 50px

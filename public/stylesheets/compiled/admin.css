@@ -264,187 +264,63 @@ body {
   margin: 0 auto;
   overflow: auto;
   overflow: -moz-scrollbars-none;
-  display: inline-block;
-  width: 800px; }
+  display: inline-block; }
   .container {
     display: block; }
-  .container #main {
-    width: 630px;
-    float: left;
-    margin-right: 10px; }
-
-#header {
-  text-align: center;
-  border-bottom: 2px solid #222;
-  padding-bottom: 3px; }
-  #header .intro {
-    text-transform: uppercase;
-    font-family: Times New Roman, serif; }
-  #header h1 {
-    text-transform: uppercase;
+  .container form label {
+    font-weight: bold; }
+  .container form fieldset {
+    padding: 1.4em;
+    margin: 0 0 1.5em 0;
+    border: 1px solid #ccc; }
+  .container form legend {
     font-weight: bold;
-    font-family: Tahoma;
-    letter-spacing: 5px;
-    font-size: 5.2em;
-    line-height: 0.8em;
-    margin: 0 0 5px; }
-    #header h1 a {
-      color: #222;
-      text-decoration: none; }
-  #header .tagline {
-    font-family: Georgia, Times New Roman, serif;
-    font-size: 1.7em;
-    text-transform: uppercase;
-    letter-spacing: 4px;
-    line-height: 1.1em;
-    word-spacing: 13px; }
-
-div#posts .post {
-  overflow: hidden;
-  margin: 1em 0 3em; }
-  div#posts .post .info {
-    float: left;
-    width: 100px;
-    line-height: 1em;
-    font-size: 0.8em;
-    color: #999; }
-    div#posts .post .info > div {
-      margin-bottom: 0.5em; }
-    div#posts .post .info a {
-      color: #999;
-      text-decoration: none; }
-      div#posts .post .info a:hover {
-        color: #666;
-        text-decoration: underline; }
-    div#posts .post .info .published_at {
-      color: #444;
-      font-size: 1.1em;
-      border-bottom: 1px solid #ccc;
-      padding-bottom: 0.3em;
-      margin-bottom: 0.5em;
-      font-family: Georgia, Times New Roman, serif; }
-div#posts .body {
-  float: left;
-  width: 520px;
-  margin-right: 10px; }
-  div#posts .body h2 {
-    margin: 0;
-    font-family: Georgia, Times New Roman, serif;
-    margin-bottom: .3em;
-    line-height: 0.9em;
-    padding-bottom: .2em;
-    text-transform: capitalize;
-    border-bottom: 1px solid #ccc; }
-    div#posts .body h2 a {
-      color: #444;
-      line-height: 0.9em;
-      text-decoration: none; }
-      div#posts .body h2 a:hover {
-        background: #ccc; }
-  div#posts .body .text {
-    font-size: 0.9em;
-    color: #555;
-    text-align: justify; }
-
-#post {
-  margin-top: 1em; }
-  #post h2 {
-    font-family: Georgia, Times New Roman, serif;
-    font-size: 1.7em;
-    text-align: center;
-    line-height: 1.1em;
-    text-transform: capitalize;
-    margin: 0 0 .2em; }
-  #post .date {
-    text-align: center;
-    margin: 0 0 3px;
-    line-height: 1.5em;
-    font-family: Georgia, Times New Roman, serif;
-    font-variant: small-caps;
-    font-size: 1.2em;
-    border-top: 3px double #222;
-    border-bottom: 1px solid #222;
-    letter-spacing: 3px;
-    word-spacing: 7px; }
-  #post .text {
-    text-align: justify;
-    font-size: 0.9em;
-    color: #555;
+    font-size: 1.2em; }
+  .container form input.text {
+    margin: 0.5em 0;
+    border: 1px solid #bbb;
+    width: 300px;
+    padding: 5px; }
+    .container form input.text:focus {
+      border: 1px solid #666; }
+  .container form input.title {
+    font-size: 1.5em; }
+  .container form input.title {
+    margin: 0.5em 0;
+    border: 1px solid #bbb;
+    width: 300px;
+    padding: 5px; }
+    .container form input.title:focus {
+      border: 1px solid #666; }
+  .container form textarea {
+    margin: 0.5em 0;
+    border: 1px solid #bbb; }
+    .container form textarea:focus {
+      border: 1px solid #666; }
+  .container form select {
+    margin: 0.5em 0;
+    border: 1px solid #bbb; }
+    .container form select:focus {
+      border: 1px solid #666; }
+  .container form textarea {
+    width: 390px;
+    height: 250px;
+    padding: 5px; }
+  .container form .row {
     margin-bottom: 1em; }
-
-#sidebar {
-  float: left;
-  width: 160px;
-  margin-top: 1em; }
-  #sidebar h4 {
-    font-family: Georgia, Times New Roman, serif;
-    font-variant: small-caps;
-    line-height: 1em;
-    margin: 0 0 .5em;
-    border-bottom: 1px solid #ccc; }
-  #sidebar ul {
-    list-style: none;
-    margin: 0 0 2em;
-    font-size: 0.8em; }
-    #sidebar ul span.time {
-      float: right;
+    .container form .row .hint {
       font-size: 0.9em;
-      line-height: 0.8em;
-      color: #999; }
-    #sidebar ul li {
-      margin-bottom: 0.5em;
-      overflow: hidden; }
-      #sidebar ul li a {
-        text-decoration: none;
-        display: block;
-        color: #444; }
-        #sidebar ul li a:hover {
-          background: #ccc; }
-      #sidebar ul li .count {
-        float: right;
-        color: #999; }
-
-#archive {
-  margin-top: 1em; }
-  #archive h3, #archive h4 {
-    font-family: Georgia, Times New Roman, serif;
-    margin: 0 0 0.5em;
-    font-variant: small-caps;
-    border-bottom: 1px solid #ccc; }
-  #archive > ul {
-    list-style: none;
-    margin: 0 0 2em;
-    font-size: 0.75em; }
-    #archive > ul li {
-      margin-bottom: 0.6em;
-      overflow: hidden; }
-      #archive > ul li .date {
-        width: 80px;
-        margin-right: 10px;
-        float: left;
-        text-align: right;
-        font-size: 1.5em;
-        line-height: 0.8em;
-        color: #999;
-        font-variant: small-caps;
-        font-family: Georgia, Times New Roman, serif; }
-      #archive > ul li a {
-        float: left;
-        width: 540px;
-        text-decoration: none;
-        color: #444;
-        display: block;
-        line-height: 1.1em; }
-        #archive > ul li a:hover {
-          background: #ccc; }
-      #archive > ul li > ul {
-        width: 540px;
-        margin-left: 90px; }
-        #archive > ul li > ul li .date {
-          width: 40px;
-          text-align: right;
-          margin-right: 10px;
-          float: left; }
-        #archive > ul li > ul li > ul {
-          width: 490px;
-          margin-left: 50px; }
+      line-height: 0.9em;
+      color: #666; }
+    .container form .row label {
+      text-transform: uppercase;
+      line-height: 1em;
+      font-size: 1.1em;
+      font-family: Gill Sans,Verdana,sans-serif; }
+  .container table#posts td.action {
+    width: 100px;
+    text-align: center; }
+  .container table#posts td.published {
+    width: 100px; }
+  .container input#post_title, .container textarea#post_body, .container input#post_tags {
+    width: 690px; }

@@ -3,4 +3,4 @@
   -@tags.each do |row|
     %li
       .count=row.value
-      =link_to row.key, url(:tag,row.key)
+      =link_to "##{row.key}", url(:tag,row.key)
