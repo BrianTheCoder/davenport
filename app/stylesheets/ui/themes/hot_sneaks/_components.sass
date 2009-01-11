@@ -1,0 +1,28 @@
+=ui-widget
+  font-family: "Gill Sans",Arial,sans-serif
+  font-size: 1.2em
+=ui-widget-input
+  font-family: "Gill Sans",Arial,sans-serif
+  font-size: 1em
+=ui-widget-header
+  border: 1px solid #2c4359
+  background: #35414f url(/images/ui_theme/35414f_40x100_textures_09_dots_small_35.png) 50% 50% repeat
+  color: #e1e463
+  font-weight: bold
+  & a
+    color: #e1e463
+=ui-widget-content
+  border: 1px solid #aaaaaa
+  background: #ffffff url(/images/ui_theme/ffffff_40x100_textures_01_flat_75.png) 50% 50% repeat-x
+  color: #2c4359
+  & a
+    color: #2c4359
+
+.ui-widget
+  +ui-widget
+.ui-widget input, .ui-widget select, .ui-widget textarea, .ui-widget button
+  +ui-widget-input
+.ui-widget-header
+  +ui-widget-header
+.ui-widget-content
+  +ui-widget-content

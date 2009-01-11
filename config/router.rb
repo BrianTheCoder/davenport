@@ -5,13 +5,15 @@ Merb::Router.prepare do
     match('/admin/post/new').to(:action =>'new').name(:new_post)
     match('/admin/post/:id', :method => :put).to(:action =>'update').name(:admin_post)
     match('/admin/post/:id').to(:action =>'edit').name(:edit_post)
-    to(:subdomain => "admin") do
-      match('/posts', :method => :post).to(:action =>'create').name(:posts)
-      match('/posts').to(:action =>'index').name(:admin)
-      match('/post/new').to(:action =>'new').name(:new_post)
-      match('/post/:id', :method => :put).to(:action =>'update').name(:post)
-      match('/post/:id').to(:action =>'edit').name(:edit_post)
-    end
+    match('/admin/settings').to(:action => 'settings').name(:admin_settings)
+    # to(:subdomain => "admin") do
+    #   match('/posts', :method => :post).to(:action =>'create').name(:posts)
+    #   match('/posts').to(:action =>'index').name(:admin)
+    #   match('/post/new').to(:action =>'new').name(:new_post)
+    #   match('/post/:id', :method => :put).to(:action =>'update').name(:post)
+    #   match('/post/:id').to(:action =>'edit').name(:edit_post)
+    #   match('/settings').to(:action => 'settings').name(:admin_settings)
+    # end
   end
   to(:controller => "posts") do
     match('/').to(:action =>'index').name(:home)

@@ -3,21 +3,26 @@ table.tablesorter {
 	font-family:arial;
 	background-color: #CDCDCD;
 	margin:10px 0pt 15px;
-	font-size: 8pt;
+	font-size: 0.7em;
 	width: 100%;
 	text-align: left;
 }
 table.tablesorter thead tr th, table.tablesorter tfoot tr th {
 	background-color: #e6EEEE;
 	border: 1px solid #FFF;
-	font-size: 8pt;
 	padding: 4px;
+	color: #333;
+	overflow: hidden;
 }
 table.tablesorter thead tr .header {
-	background-image: url(/images/bg.gif);
-	background-repeat: no-repeat;
-	background-position: center right;
+  background: #93c3cd url(/images/ui_theme/93c3cd_40x100_textures_07_diagonals_small_50.png) 50% 50% repeat;
 	cursor: pointer;
+}
+
+table.tablesorter thead tr .header .ui-icon {
+  float: right;
+  background-position:-128px -16px;
+  background-image: url(/images/ui_theme/ffffff_256x240_icons_icons.png);
 }
 table.tablesorter tbody td {
 	color: #3D3D3D;
@@ -25,15 +30,17 @@ table.tablesorter tbody td {
 	background-color: #FFF;
 	vertical-align: top;
 }
+t
 table.tablesorter tbody tr.odd td {
 	background-color:#F0F0F6;
 }
-table.tablesorter thead tr .headerSortUp {
-	background-image: url(/images/asc.gif);
+table.tablesorter thead tr .headerSortUp .ui-icon{
+	background-position:0 -16px;
 }
-table.tablesorter thead tr .headerSortDown {
-	background-image: url(/images/desc.gif);
+table.tablesorter thead tr .headerSortDown .ui-icon{
+	background-position:-64px -16px;
 }
 table.tablesorter thead tr .headerSortDown, table.tablesorter thead tr .headerSortUp {
-background-color: #8dbdd8;
+  background: #db4865 url(/images/ui_theme/db4865_40x100_textures_07_diagonals_small_40.png) 50% 50% repeat;
+  color: #fff;
 }

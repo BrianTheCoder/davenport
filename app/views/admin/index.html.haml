@@ -1,18 +1,18 @@
-=link_to "+ New Post", url(:new_post)
-%table#posts.tablesorter
-  %thead
-    %tr
-      %th Title
-      %th Posted at
-      %th Tags
-      %th Action
-  %tbody
-    -@posts.each do |post|
+#posts
+  %table.tablesorter
+    %thead
       %tr
-        %td.published=post.published_at.strftime("%D %H:%m")
-        %td.title=post.title
-        %td.tags=post.tags.join(', ')
-        %td.action
-          =link_to "edit", url(:edit_post, post.id)
-          \/
-          =link_to "delete", url(:post, *post.path), :class => "delete"
+        %th Posted at
+        %th Title
+        %th Tags
+        %th Action
+    %tbody
+      -@posts.each do |post|
+        %tr
+          %td.published=post.published_at.strftime("%D %H:%m")
+          %td.title=post.title
+          %td.tags=post.tags.map{|t| link_to("##{t}")}.join(', ')
+          %td.action
+            =link_to "edit", url(:edit_post, post.id)
+            \/
+            =link_to "delete", url(:post, *post.path), :class => "delete"

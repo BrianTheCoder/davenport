@@ -1,6 +1,6 @@
 $(document).ready(function(){
   $.tablesorter.defaults.widgets = ['zebra'];
-  $('table#posts').tablesorter();
+  $('#posts table:first').tablesorter().find('th').prepend('<span class="ui-icon"></span>');
   $('textarea#post_body').markItUp(mySettings);
 });
 

@@ -1,4 +1,6 @@
 @import base
+@import ui/all
+@import ui/themes/hot_sneaks
 
 body
   +blueprint-typography
@@ -7,6 +9,49 @@ body
   color: #222
 .container
   +container
+  #nav
+    +ui-helper-reset 
+    +ui-widget-header 
+    +ui-corner-all
+    margin-top: 1em
+    padding: 1em 1em 0
+    font-size: .9em
+    overflow: hidden
+    #new_post
+      color: #333
+      text-decoration: none
+      float: right
+      padding: 0.2em 1em 0.2em 20px
+      position: relative
+      +ui-state-default
+      +ui-corner-top
+      &:hover
+        +ui-state-hover
+        .ui-icon
+          +ui-state-hover-icon
+      &:active
+        +ui-state-active
+      .ui-icon
+        left: 0.2em
+        margin: -8px 5px 0 0
+        position: absolute
+        top: 50%
+        +ui-state-default-icon
+    ul
+      +ui-helper-reset
+      +ui-tabs-nav
+      list-style: none
+      float: left
+      li
+        a
+          +ui-corner-top 
+          +ui-state-default       
+          color: #333
+          padding: 0.2em 1em
+          &:hover
+            +ui-state-hover
+          &:active
+            +ui-state-active
   form
     +blueprint-form
     .row
@@ -20,11 +65,57 @@ body
         line-height: 1em
         font-size: 1.1em
         font-family: Gill Sans,Verdana,sans-serif
-  table#posts
-    td.action
-      width: 100px
-      text-align: center
-    td.published
-      width: 100px
+  #posts 
+    table
+      td.action
+        width: 100px
+        text-align: center
+      td.published
+        width: 100px
   input#post_title, textarea#post_body, input#post_tags
     width: 690px
+table.tablesorter
+  background-color: #CDCDCD
+  margin: 10px 0pt 15px
+  font-size: 0.7em
+  width: 100%
+  text-align: left
+  thead tr 
+    th
+      background-color: #e6EEEE
+      border: 1px solid #FFF
+      padding: 4px
+      color: #333
+      overflow: hidden
+    .header 
+      +ui-state-default
+      border-color: #fff
+      cursor: pointer
+      &.headerSortUp
+        +ui-state-active
+        border-color: #fff
+        .ui-icon
+          background-position: 0 -16px
+      &.headerSortDown
+        +ui-state-active
+        border-color: #fff
+        .ui-icon
+          background-position: -64px -16px
+      .ui-icon 
+        float: right
+        background-position: -128px -16px
+        +ui-state-default-icon
+  tbody 
+    td 
+      color: #3D3D3D
+      padding: 4px
+      background-color: #FFF
+      vertical-align: top
+    tr.odd td 
+      background-color: #efefef
+  tfoot tr th 
+    background-color: #e6EEEE
+    border: 1px solid #FFF
+    padding: 4px
+    color: #333
+    overflow: hidden

@@ -31,4 +31,8 @@ class Admin < Application
     @post = Post.get(params[:id])
     render
   end
+  
+  def settings
+    render
+  end
 end

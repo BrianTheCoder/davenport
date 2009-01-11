@@ -20,7 +20,6 @@ TAGLINES = ["Get ready to have your mind blown","You can't handle the awesome"]
 
 
 require 'lib/extlib'
-require 'config/router.rb'
 require 'config/dependencies.rb'
 
 #ps aux | grep merb | awk '{print $2}' | xargs kill -9
