@@ -6,7 +6,7 @@ class PostsPart < Merb::PartController
   end
   
   def tag_list(limit = 10)
-    @tags = Post.tag_count(:group => true).sort_by{|row| row.value}.reverse[0..limit]
+    @tags = Post.tag_count(:group => true).sort_by{|row| row['value']}.reverse[0..limit]
     render
   end
   

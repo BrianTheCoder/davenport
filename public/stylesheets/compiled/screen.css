@@ -308,7 +308,7 @@ div#posts .post {
     font-size: 0.8em;
     color: #999; }
     div#posts .post .info > div {
-      margin-bottom: 0.5em; }
+      margin-bottom: 1em; }
     div#posts .post .info a {
       color: #999;
       text-decoration: none; }
@@ -321,6 +321,7 @@ div#posts .post {
       border-bottom: 1px solid #ccc;
       padding-bottom: 0.3em;
       margin-bottom: 0.5em;
+      line-height: 1.1em;
       font-family: Georgia, Times New Roman, serif; }
 div#posts .body {
   float: left;
@@ -330,7 +331,7 @@ div#posts .body {
     margin: 0;
     font-family: Georgia, Times New Roman, serif;
     margin-bottom: .3em;
-    line-height: 0.9em;
+    line-height: 1em;
     padding-bottom: .2em;
     text-transform: capitalize;
     border-bottom: 1px solid #ccc; }

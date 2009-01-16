@@ -2,5 +2,5 @@
 %ul
   -@archive.each do |row|
     %li
-      .count=row.value
-      =link_to Date.parse(row.key.reverse.join('/')).strftime('%b %Y'), url(:archive, *row.key)
+      .count=row['value']
+      =link_to Date.parse(row['key'].reverse.join('/')).strftime('%b %Y'), url(:archive, *row['key'])

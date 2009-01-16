@@ -1,7 +1,6 @@
 =ui-icon
   width: 16px
   height: 16px
-  background-image: url(/images/ui_theme/c02669_256x240_icons_icons.png)
 =ui-widget-content-icon
   background-image: url(/images/ui_theme/c02669_256x240_icons_icons.png)
 =ui-widget-header-icon
@@ -10,8 +9,6 @@
   background-image: url(/images/ui_theme/ffffff_256x240_icons_icons.png)
 =ui-state-hover-icon
   background-image: url(/images/ui_theme/454545_256x240_icons_icons.png)
-=ui-state-active-icon
-  background-image: url(/images/ui_theme/ffffff_256x240_icons_icons.png)
 =ui-state-highlight-icon
   background-image: url(/images/ui_theme/88a206_256x240_icons_icons.png)
 =ui-state-error-icon
@@ -19,6 +16,7 @@
   
 .ui-icon
   +ui-icon
+  +ui-widget-content-icon
 .ui-widget-content .ui-icon
   +ui-widget-content-icon
 .ui-widget-header .ui-icon
@@ -28,7 +26,7 @@
 .ui-state-hover .ui-icon, .ui-state-focus .ui-icon
   +ui-state-hover-icon
 .ui-state-active .ui-icon
-  +ui-state-active-icon
+  +ui-state-default-icon
 .ui-state-highlight .ui-icon
   +ui-state-highlight-icon
 .ui-state-error .ui-icon, .ui-state-error-text .ui-icon

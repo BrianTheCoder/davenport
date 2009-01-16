@@ -8,10 +8,10 @@ class Admin < Application
     end
   end
   
-  def update
-    @post = Post.get(params[:id])
+  def update(id)
+    @post = Post.get(id)
     if @post.update_attributes(params[:post])
-      redirect url(:admin)
+      redirect url(:admin_posts)
     else
       render :edit
     end
@@ -27,12 +27,17 @@ class Admin < Application
     render
   end
   
-  def edit
-    @post = Post.get(params[:id])
+  def edit(id)
+    @post = Post.get(id)
     render
   end
   
   def settings
     render
+  end
+  
+  def destroy(id)
+    @post = Post.get(id)
+    @post.destroy
   end
 end

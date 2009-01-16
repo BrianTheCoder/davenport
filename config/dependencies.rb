@@ -20,11 +20,11 @@ dependency "dm-timestamps", dm_gems_version
 dependency "dm-validations", dm_gems_version
 # dependency "dm-couchdb-adapter", dm_gems_version
 
-dependency "chriseppstein-compass", "0.3.4", :require_as => "compass"     # sudo gem install chriseppstein-compass --source http://gems.github.com
+dependency "chriseppstein-compass", "0.3.7", :require_as => "compass"     # sudo gem install chriseppstein-compass --source http://gems.github.com
 dependency "haml",                  "2.1.0"                               # From: http://github.com/nex3/haml/
 dependency "ParseTree",             "3.0.2", :require_as => "parse_tree"
 dependency "ruby2ruby",             "1.2.1"
-dependency "rack-cache",            "0.2.0", :require_as => "rack/cache"
+dependency "rack-cache",            "0.3.0", :require_as => "rack/cache"
 dependency "system_timer",          "1.0"
 dependency "stringex",              "0.9.3"
 dependency "oniguruma",             "1.1.0"

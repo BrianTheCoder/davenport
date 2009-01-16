@@ -3,6 +3,7 @@ Merb::Router.prepare do
     match('/admin/posts', :method => :post).to(:action =>'create').name(:posts)
     match('/admin/posts').to(:action =>'index').name(:admin_posts)
     match('/admin/post/new').to(:action =>'new').name(:new_post)
+    match('/admin/post/:id', :method => :delete).to(:action =>'destroy').name(:admin_post)
     match('/admin/post/:id', :method => :put).to(:action =>'update').name(:admin_post)
     match('/admin/post/:id').to(:action =>'edit').name(:edit_post)
     match('/admin/settings').to(:action => 'settings').name(:admin_settings)

@@ -1223,6 +1223,8 @@ body {
         border: 1px solid #ff6b7f;
         background: #db4865 url(/images/ui_theme/db4865_40x100_textures_07_diagonals_small_40.png) 50% 50% repeat;
         font-weight: bold; color: #ffffff; outline: none; }
+        .container #nav #new_post:active .ui-icon {
+          background-image: url(/images/ui_theme/ffffff_256x240_icons_icons.png); }
       .container #nav #new_post .ui-icon {
         left: 0.2em;
         margin: -8px 5px 0 0;
@@ -1275,7 +1277,8 @@ body {
         .container #nav ul li a:active {
           border: 1px solid #ff6b7f;
           background: #db4865 url(/images/ui_theme/db4865_40x100_textures_07_diagonals_small_40.png) 50% 50% repeat;
-          font-weight: bold; color: #ffffff; outline: none; }
+          font-weight: bold; color: #ffffff; outline: none;
+          color: #fff; }
   .container form label {
     font-weight: bold; }
   .container form fieldset {
@@ -1315,10 +1318,54 @@ body {
     width: 390px;
     height: 250px;
     padding: 5px; }
+  .container form#post_form {
+    overflow: hidden;
+    margin: 2em 0; }
+    .container form#post_form .main {
+      float: left;
+      width: 670px;
+      margin-right: 10px; }
+      .container form#post_form .main input.text, .container form#post_form .main textarea {
+        width: 655px; }
+    .container form#post_form .secondary {
+      float: left;
+      width: 270px;
+      margin-right: 0; }
+      .container form#post_form .secondary textarea {
+        width: 258px;
+        height: 50px; }
+      .container form#post_form .secondary select {
+        width: 270px;
+        padding: 3px 5px;
+        font-size: 1em; }
+    .container form#post_form .buttons {
+      clear: left; }
+      .container form#post_form .buttons input[type='submit'] {
+        border: 1px solid #93c3cd;
+        background: #93c3cd url(/images/ui_theme/93c3cd_40x100_textures_07_diagonals_small_50.png) 50% 50% repeat;
+        font-weight: bold;
+        color: #333333;
+        outline: none;
+        -moz-border-radius: 4px;
+        -webkit-border-radius: 4px;
+        border-radius: 4px;
+        font-size: 1em;
+        padding: 3px 7px; }
+        .container form#post_form .buttons input[type='submit']:hover {
+          border: 1px solid #999999;
+          background: #ccd232 url(/images/ui_theme/ccd232_40x100_textures_07_diagonals_small_75.png) 50% 50% repeat;
+          font-weight: bold;
+          color: #212121;
+          outline: none; }
+        .container form#post_form .buttons input[type='submit']:active {
+          border: 1px solid #ff6b7f;
+          background: #db4865 url(/images/ui_theme/db4865_40x100_textures_07_diagonals_small_40.png) 50% 50% repeat;
+          font-weight: bold; color: #ffffff; outline: none;
+          color: #fff; }
   .container form .row {
     margin-bottom: 1em; }
     .container form .row .hint {
-      font-size: 0.9em;
+      font-size: 0.8em;
       line-height: 0.9em;
       color: #666; }
     .container form .row label {
@@ -1326,13 +1373,8 @@ body {
       line-height: 1em;
       font-size: 1.1em;
       font-family: Gill Sans,Verdana,sans-serif; }
-  .container #posts table td.action {
-    width: 100px;
-    text-align: center; }
   .container #posts table td.published {
     width: 100px; }
-  .container input#post_title, .container textarea#post_body, .container input#post_tags {
-    width: 690px; }
 
 table.tablesorter {
   background-color: #CDCDCD;
