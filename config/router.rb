@@ -16,6 +16,9 @@ Merb::Router.prepare do
     #   match('/settings').to(:action => 'settings').name(:admin_settings)
     # end
   end
+  match('/admin').defer_to do |request, params|
+    redirect("/admin/posts")
+  end
   to(:controller => "posts") do
     match('/').to(:action =>'index').name(:home)
     match('/tag/:name').to(:action => "tag").name(:tag)
