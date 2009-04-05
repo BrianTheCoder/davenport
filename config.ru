@@ -1,4 +1,4 @@
-require File.join(File.dirname(__FILE__),'..','lib','rack','hapong')
+require 'lib/rack/hapong'
 require 'rack/cache'
 
 # Test response when in development mode
