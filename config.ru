@@ -1,38 +1,4 @@
 require 'merb-core'
-require 'lib/rack/hapong'
-require 'rack/cache'
-
-# Test response when in development mode
-# if Merb.environment == 'development'
-#  use Rack::Lint
-# end
-
-# handle OPTIONS / requests without invoking any handlers
-use Rack::HAPong
-
-# use HTTP caching
-use Rack::Cache do
-  import 'rack/cache/config/default'
-  import 'rack/cache/config/no-cache'
-  import 'rack/cache/config/busters'
-
-  # log cache hit/miss/pass when in development mode
-  # set :verbose, Merb.environment == 'development'
-
-  # override the default behavior to not cache when a cookie header is sent
-  on :receive do
-    pass! unless request.method? 'GET', 'HEAD'
-    pass! if request.header? 'Authorization', 'Expect'
-    lookup!
-  end
-end
-
-# Compress output when in development mode
-#if Merb.environment == 'development'
-#  use Rack::Deflater
-#end
-# 
-
 require 'rack/auth/abstract/handler'
 require 'rack/auth/abstract/request'
 
