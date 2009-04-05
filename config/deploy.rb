@@ -1,7 +1,7 @@
-set :application, 'merb-skeleton'
-set :user,        'root'
-set :domain,      'ec2-75-101-244-38.compute-1.amazonaws.com'
-set :deploy_to,   "/var/app/#{application}"
+set :application, 'davenport'
+set :user,        'app'
+set :domain,      '72.14.182.34'
+set :deploy_to,   "/data/#{application}"
 set :repository,  "git@github.com:dkubb/#{application}.git "
 
 namespace :vlad do

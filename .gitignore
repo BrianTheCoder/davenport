@@ -21,3 +21,4 @@ gems/specifications/*
 merb_profile_results
 couchdb.*
 config/production.rb
+config/deploy.rb

@@ -15,17 +15,18 @@
   font-size: 100%
   list-style: none
   
-=ui-helper-clearfix:after
-  content: "."
-  display: block
-  height: 0
-  clear: both
-  visibility: hidden
+=ui-helper-clearfix
   
 =ui-helper-clearfix
   display: inline-block
   * html &
     height: 1%
+  &:after
+    content: "."
+    display: block
+    height: 0
+    clear: both
+    visibility: hidden
     
 =ui-helper-clearfix
   display:block
@@ -55,3 +56,31 @@
   left: 0
   width: 100%
   height: 100%
+  
+
+.ui-helper-hidden
+  +ui-helper-hidden
+.ui-helper-hidden-accessible
+  +ui-helper-hidden-accessible
+.ui-helper-reset
+  +ui-helper-reset
+.ui-helper-clearfix:after
+  content: "."
+  display: block
+  height: 0
+  clear: both
+  visibility: hidden
+.ui-helper-clearfix
+  display: inline-block
+* html .ui-helper-clearfix
+  height:1%
+.ui-helper-clearfix
+  display:block
+.ui-helper-zfix
+  +ui-helper-zfix
+.ui-state-disabled
+  +ui-state-disabled
+.ui-icon
+  +ui-icon
+.ui-widget-overlay
+  +ui-widget-overlay
