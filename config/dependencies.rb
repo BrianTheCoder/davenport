@@ -11,7 +11,6 @@ dependency "merb-action-args", merb_gems_version
 dependency "merb-auth-core", merb_gems_version
 dependency "merb-auth-more", merb_gems_version
 dependency "merb-exceptions", merb_gems_version
-dependency "merb_datamapper", merb_gems_version
 dependency "merb-parts", "0.9.8"
 
 # dependency "dm-couchdb-adapter", dm_gems_version
