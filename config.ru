@@ -1,6 +1,6 @@
+require 'merb-core'
 require 'lib/rack/hapong'
 require 'rack/cache'
-require 'merb-core'
 
 # Test response when in development mode
 # if Merb.environment == 'development'
