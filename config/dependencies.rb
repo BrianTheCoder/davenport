@@ -15,7 +15,7 @@ dependency "merb-parts", "0.9.8"
 dependency "chriseppstein-compass", "0.5.9", :require_as => "compass"     # sudo gem install chriseppstein-compass --source http://gems.github.com
 dependency "haml",                  "2.1.0"                               # From: http://github.com/nex3/haml/
 dependency "ParseTree",             "3.0.3", :require_as => "parse_tree"
-dependency "ruby2ruby",             "1.2.1"
+dependency "ruby2ruby",             "1.2.2"
 dependency "rack-cache",            "0.4", :require_as => "rack/cache"
 dependency "system_timer",          "1.0"
 dependency "rsl-stringex",          "0.9.3", :require_as => "stringex"
