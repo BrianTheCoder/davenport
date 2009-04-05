@@ -1,8 +1,11 @@
-class Settings
-  include DataMapper::CouchResource
+class Settings < CouchRest::ExtendedDocument   
+  include CouchRest::Validation
+  include Extlib::Hook
+ 
+  use_database CouchRest.database!('davenport')
   
-  property :title,            String, :length => 200
-  property :taglines,         DataMapper::Types::JsonObject, :default => ['this is a tagline']
-  property :markup_engine,    String, :default => 'none'
+  property :title
+  property :taglines
+  property :markup_engine
   
 end
