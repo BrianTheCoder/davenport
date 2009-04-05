@@ -1,0 +1,31 @@
+#archive
+  -case @group_level
+  -when 1
+    %h4=@date.year  
+    %ul
+      -@posts.group_by{|p| p.published_at.strftime('%B')}.sort_by{|k,v| k}.reverse.each do |k,v|
+        %li
+          .date=k
+          %ul
+            -v.group_by{|p| p.published_at.day}.sort_by{|k,v| k}.reverse.each do |k,v|
+              %li
+                .date=k
+                %ul
+                  -v.each do |post|
+                    %li=link_to post.title, "/#{post.path.join('/')}"
+  -when 2
+    %h4=@date.strftime('%B %Y')
+    %ul
+      -@posts.group_by{|p| p.published_at.day}.sort_by{|k,v| k}.reverse.each do |k,v|
+        %li
+          .date=k
+          %ul
+            -v.each do |post|
+              %li=link_to post.title, "/#{post.path.join('/')}"
+  -when 3
+    %h3="Posts for #{@date.strftime('%B %d %Y')}"
+    %ul
+      -@posts.sort_by{|p| p.published_at}.reverse.each do |post|
+        %li
+          .date=post.published_at.strftime('%H:%m %P')
+          =link_to post.title, "/#{post.path.join('/')}"

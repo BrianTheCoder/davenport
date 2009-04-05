@@ -1,0 +1,21 @@
+!!! Strict
+%html{html_attrs}
+  %head
+    %meta{'http-equiv' => 'Content-Type', :content => 'text/html;charset=utf-8'}/
+    =css_link 'compiled/screen'
+    %title="BrianTheCoder - #{(@title || 'On the Edge of Sanity')}"
+  %body
+    %div.container
+      #header
+        .intro The Writings of
+        %h1=link_to "BrianTheCoder", "/"
+        .tagline="Rocking, socking and bee bopping"
+      #hr='test'
+      #main='test'
+      #sidebar
+        =partial :archive_list
+        =partial :category_list
+        =partial :tag_list
+        =partial :recent_posts
+    =js_link :jquery,
+    =js_link :application

@@ -1,0 +1,22 @@
+!!! Strict
+%html{html_attrs}
+  %head
+    %meta{'http-equiv' => 'Content-Type', :content => 'text/html;charset=utf-8'}/
+    =css_include_tag 'compiled/admin', "markitup/style.css", :bundle => :admin
+    %title Admin
+  %body
+    .container
+      #nav
+        =link_to '<span class="ui-icon ui-icon-plusthick"></span>New Post', url(:new_post), :id => "new_post"
+        %ul
+          %li=link_to "Posts", url(:admin_posts)
+          %li=link_to "Settings", url(:admin_settings)
+      -[ :error, :success, :notice ].each do |type|
+        -if message[type]
+          %div{:class => type }=message[type]
+      =catch_content :for_layout
+    - if Merb.environment == 'development'
+      =js_include_tag :jquery, "jquery.ui.all.js", "jquery.tablesorter", "jquery.markitup", "admin", :bundle => :base
+    - else
+      =js_include_tag "#{request.protocol}://ajax.googleapis.com/ajax/libs/jquery/1.2.6/jquery.min.js"
+      =js_include_tag "jquery.ui.all.js", "jquery.tablesorter", "jquery.markitup", "admin", :bundle => :admin

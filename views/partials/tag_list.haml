@@ -1,0 +1,7 @@
+-@tags = Post.tag_count(:group => true).sort_by{|row| row['value']}.reverse[0..limit]
+%h4 Tags
+%ul
+  -@tags.each do |row|
+    %li
+      .count=row['value']
+      =link_to "##{row['key']}", url(:tag,row['key'])
