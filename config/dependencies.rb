@@ -6,16 +6,13 @@ dependency "merb-assets", merb_gems_version
 dependency "merb-cache", merb_gems_version
 dependency "merb-haml", merb_gems_version
 dependency "merb-helpers", merb_gems_version
-dependency "merb-slices", merb_gems_version
 dependency "merb-action-args", merb_gems_version
-dependency "merb-auth-core", merb_gems_version
-dependency "merb-auth-more", merb_gems_version
 dependency "merb-exceptions", merb_gems_version
 dependency "merb-parts", "0.9.8"
 
 # dependency "dm-couchdb-adapter", dm_gems_version
 
-dependency "chriseppstein-compass", "0.5.5", :require_as => "compass"     # sudo gem install chriseppstein-compass --source http://gems.github.com
+dependency "chriseppstein-compass", "0.5.9", :require_as => "compass"     # sudo gem install chriseppstein-compass --source http://gems.github.com
 dependency "haml",                  "2.1.0"                               # From: http://github.com/nex3/haml/
 dependency "ParseTree",             "3.0.3", :require_as => "parse_tree"
 dependency "ruby2ruby",             "1.2.1"
