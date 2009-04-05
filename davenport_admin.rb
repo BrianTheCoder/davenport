@@ -12,6 +12,7 @@ class DavenportAdmin < Sinatra::Default
   disable :run
   enable :static, :session, :methodoverride, :reload
   set :app_file, __FILE__
+  set :views, Proc.new { File.join(root, "views","admin") }
   # set :env, :production
   
   before do
@@ -38,7 +39,7 @@ class DavenportAdmin < Sinatra::Default
   
   get '/' do
     @posts = Post.by_date(:descending => true)
-    haml :"admin/index"
+    haml :index
   end
   
   post '/' do
@@ -46,7 +47,7 @@ class DavenportAdmin < Sinatra::Default
     if @post.save
       redirect "/"
     else
-      haml :"admin/new"
+      haml :new
     end
   end
   
@@ -55,27 +56,28 @@ class DavenportAdmin < Sinatra::Default
     if @post.update_attributes(params[:post])
       redirect "/"
     else
-      haml :"admin/edit"
+      haml :edit
     end
   end
   
-  get '/new'
+  get '/new' do
     @post = Post.new
-    haml :"admin/new"
+    haml :new
   end
   
   get '/edit/:id' do |id|
     @post = Post.get(id)
-    render
+    haml :edit
   end
   
   get '/settings' do
-    haml :"admin/settings"
+    haml :settings
   end
   
-  def destroy(id)
+  delete '/:id' do |id|
     @post = Post.get(id)
     @post.destroy
+    redirect '/'
   end
 
 end

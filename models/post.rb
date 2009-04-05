@@ -4,7 +4,7 @@ class Post < CouchRest::ExtendedDocument
  
   use_database CouchRest.database!('davenport')
   
-  property :published_at
+  property :published_at, :cast_as => 'Time'
   property :title
   property :body
   property :tags
@@ -17,76 +17,69 @@ class Post < CouchRest::ExtendedDocument
     published_at.strftime('%Y/%m/%d').split('/') + [slug]
   end
 
-  view(:by_date){{
+  view_by :date,
     :map => "function(doc){ 
-      if(doc.couchdb_type == '#{self}'){
-        emit(Date.parse(doc.published_at), doc)
+      if(doc['couchrest-type'] == '#{self}'){
+        emit(Date.parse(doc['published_at']), doc)
       }
     }"
-  }}
   
-  view(:tag_count){{
+  view_by :tag_count,
     :map => "function(doc){
-      if(doc.couchdb_type == '#{self}'){
-        for(var tag in doc.tags){
-          emit(doc.tags[tag], 1);
+      if(doc['couchrest-type'] == '#{self}'){
+        for(var tag in doc['tags']){
+          emit(doc['tags'][tag], 1);
         }
       }
     }",
     :reduce => "function(keys,values,combine){
       return sum(values);
     }"
-  }}
   
-  view(:category_count){{
+  view_by :category_count,
     :map => "function(doc){
-      if(doc.couchdb_type == '#{self}'){
-          emit(doc.category, 1);
+      if(doc['couchrest-type'] == '#{self}'){
+          emit(doc['category'], 1);
       }
     }",
     :reduce => "function(keys,values,combine){
       return sum(values);
     }"
-  }}
   
-  view(:by_tag){{
+  view_by :tag,
     :map => "function(doc){
-      if(doc.couchdb_type == '#{self}'){
-        for(var tag in doc.tags){
-          emit(doc.tags[tag], doc);
+      if(doc['couchrest-type'] == '#{self}'){
+        for(var tag in doc['tags']){
+          emit(doc['tags'][tag], doc);
         }
       }
     }"
-  }}
   
-  view(:by_category){{
+  view_by :category,
     :map => "function(doc){
-      if(doc.couchdb_type == '#{self}'){
-          emit(doc.category, doc);
+      if(doc['couchrest-type'] == '#{self}'){
+          emit(doc['category'], doc);
       }
     }"
-  }}
   
-  view(:archive_count){{
+  view_by :archive_count,
     :map => "function(doc){
-      if(doc.couchdb_type == '#{self}'){
-        var date = new Date(Date.parse(doc.published_at))
+      if(doc['couchrest-type'] == '#{self}'){
+        var date = new Date(Date.parse(doc['published_at']))
         emit([date.getFullYear(),(date.getMonth()+1)], 1)
       }
     }",
     :reduce => "function(keys,values,combine){
       return sum(values);
     }"
-  }}
   
-  view(:archive){{
+  view_by :archive,
     :map => "function(doc){
-      if(doc.couchdb_type == '#{self}'){
-        var date = new Date(Date.parse(doc.published_at))
+      if(doc['couchrest-type'] == '#{self}'){
+        var date = new Date(Date.parse(doc['published_at']))
         emit([date.getFullYear(), (date.getMonth()+1), date.getDate(), doc.slug],doc)
       }
     }"
-  }}
   
   before :save do
     self['slug'] = title.to_url

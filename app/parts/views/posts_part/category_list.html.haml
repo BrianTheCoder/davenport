@@ -1,6 +1,0 @@
-%h4 Categories
-%ul
-  -@categories.each do |row|
-    %li
-      .count=row['value']
-      =link_to row['key'], url(:category,row['key'])

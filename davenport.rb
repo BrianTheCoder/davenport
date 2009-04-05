@@ -1,17 +1,19 @@
 require 'rubygems'
 require 'sinatra/base'
-# require 'couchrest'
+require 'couchrest'
 require 'extlib'
 require 'stringex'
 
 require 'lib' / 'helpers'
+require 'lib' / 'extlib'
 
-# Dir['models/*'].each{|m| require m}
+Dir['models/*'].each{|m| require m}
 
 class Davenport < Sinatra::Default
   disable :run
   enable :static, :session, :methodoverride, :reload
   set :app_file, __FILE__
+  set :views, Proc.new { File.join(root, "views","posts") }
   # set :env, :production
   
   before do
@@ -31,20 +33,20 @@ class Davenport < Sinatra::Default
   
   error do
     e = request.env['sinatra.error']
-    puts e.to_s
-    puts e.backtrace.join('\n')
+    p e.to_s
+    p e.backtrace.join('\n')
     'Application error'
   end
   
   get '/' do
-    @posts = Post.by_date(:descending => true)
-    haml :"posts/index"
+    @posts = Post.by_date(:descending => true, :limit => 5)
+    haml :index
   end
   
    get '/:year/:month/:day/:slug' do |year,month,day,slug|
-    @post = Post.archive(:group => true, :key => [year.to_i,month.to_i,day.to_i,slug]).first
+    @post = Post.by_archive(:key => [year.to_i,month.to_i,day.to_i,slug]).first
     @title = @post.title
-    haml :"posts/show"
+    haml :show
   end
   
   get '/:year(/:month(/:day))' do |year, month, day|
@@ -53,25 +55,24 @@ class Davenport < Sinatra::Default
     key << month.to_i unless month.nil?
     key << day.to_i unless day.nil?
     puts key.inspect
-    @posts = Post.archive(:group_level => @group_level, :startkey => key)
+    @posts = Post.by_archive(:group_level => @group_level, :startkey => key)
     redirect request.referrer if @posts.nil?
     if @posts.size == 1
       redirect url(:post, *@posts.first.path)
     end
     @date = Date.parse("#{month || 1}/#{day || 1}/#{year}")
-    haml :"posts/archive"
+    haml :archive
   end
   
   get '/tag/:name' do |name|
-    @posts = Post.by_tag(:group => true, :key => name)
+    @posts = Post.by_tag(:key => name)
     @title = "Posts tagged with #{name}"
-    haml :"posts/index"
+    haml :index
   end
   
   get '/category/:name' do |name|
-    @posts = Post.by_category(:group => true, :key => name)
+    @posts = Post.by_category(:key => name)
     @title = "Posts in #{name}"
-    haml :"posts/index"
+    haml :index
   end
-
 end
