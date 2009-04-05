@@ -1,4 +1,0 @@
-#post
-  %h2=@post.title
-  .date="#{@post.published_at.strftime('%A')} the #{@post.published_at.strftime('%d').to_i.ordinalize} of #{@post.published_at.strftime('%B')} #{@post.published_at.strftime('%Y')} at #{@post.published_at.strftime('%I:%M %p')}"
-  .text=@post.body
