@@ -1,0 +1,190 @@
+@import base
+
+body
+  +blueprint-typography
+  +blueprint-interaction
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif
+  color: #222
+.container
+  +container
+  width: 800px
+  #main
+    width: 630px
+    float: left
+    margin-right: 10px
+#header
+  text-align: center
+  border-bottom: 2px solid #222
+  padding-bottom: 3px
+  .intro
+    text-transform: uppercase
+    font-family: Times New Roman, serif
+  h1
+    text-transform: uppercase
+    font-weight: bold
+    font-family: Tahoma
+    letter-spacing: 5px
+    font-size: 5.2em
+    line-height: 0.8em
+    margin: 0 0 5px
+    a
+      color: #222
+      text-decoration: none
+  .tagline
+    font-family: Georgia, Times New Roman, serif
+    font-size: 1.7em
+    text-transform: uppercase
+    letter-spacing: 4px
+    line-height: 1.1em
+    word-spacing: 13px
+div#posts 
+  .post
+    overflow: hidden
+    margin: 1em 0 3em
+    .info
+      float: left
+      width: 100px
+      line-height: 1em
+      font-size: 0.8em
+      color: #999
+      & > div
+        margin-bottom: 1em
+      a
+        color: #999
+        text-decoration: none
+        &:hover
+          color: #666
+          text-decoration: underline
+      .published_at
+        color: #444
+        font-size: 1.1em
+        border-bottom: 1px solid #ccc
+        padding-bottom: 0.3em
+        margin-bottom: 0.5em
+        line-height: 1.1em
+        font-family: Georgia, Times New Roman, serif
+  .body
+    float: left
+    width: 520px
+    margin-right: 10px
+    h2
+      margin: 0
+      font-family: Georgia, Times New Roman, serif
+      margin-bottom: .3em
+      line-height: 1em
+      padding-bottom: .2em
+      text-transform: capitalize
+      border-bottom: 1px solid #ccc
+      a
+        color: #444
+        line-height: 0.9em
+        text-decoration: none
+        &:hover
+          background: #ccc
+    .text
+      font-size: 0.9em
+      color: #555
+      text-align: justify
+#post
+  margin-top: 1em
+  h2
+    font-family: Georgia, Times New Roman, serif
+    font-size: 1.7em
+    text-align: center
+    line-height: 1.1em
+    text-transform: capitalize
+    margin: 0 0 .2em
+  .date
+    text-align: center
+    margin: 0 0 3px
+    line-height: 1.5em
+    font-family: Georgia, Times New Roman, serif
+    font-variant: small-caps
+    font-size: 1.2em
+    border-top: 3px double #222
+    border-bottom: 1px solid #222
+    letter-spacing: 3px
+    word-spacing: 7px
+  .text
+    text-align: justify
+    font-size: 0.9em
+    color: #555
+    margin-bottom: 1em
+#sidebar
+  float: left
+  width: 160px
+  margin-top: 1em
+  h4
+    font-family: Georgia, Times New Roman, serif
+    font-variant: small-caps
+    line-height: 1em
+    margin: 0 0 .5em
+    border-bottom: 1px solid #ccc
+  ul
+    list-style: none
+    margin: 0 0 2em
+    font-size: 0.8em
+    span.time
+      float: right
+      font-size: 0.9em
+      line-height: 0.8em
+      color: #999
+    li 
+      margin-bottom: 0.5em
+      overflow: hidden
+      a
+        text-decoration: none
+        display: block
+        color: #444
+        &:hover
+          background: #ccc
+      .count
+        float: right
+        color: #999
+#archive
+  margin-top: 1em
+  h3, h4
+    font-family: Georgia, Times New Roman, serif
+    margin: 0 0 0.5em
+    font-variant: small-caps
+    border-bottom: 1px solid #ccc
+  & > ul
+    list-style: none
+    margin: 0 0 2em
+    font-size: 0.75em
+    li
+      margin-bottom: 0.6em
+      overflow: hidden
+      .date
+        width: 80px
+        margin-right: 10px
+        float: left
+        text-align: right
+        font-size: 1.5em
+        line-height: 0.8em
+        color: #999
+        font-variant: small-caps
+        font-family: Georgia, Times New Roman, serif
+      a
+        float: left
+        width: 540px
+        text-decoration: none
+        color: #444
+        display: block
+        line-height: 1.1em
+        &:hover
+          background: #ccc
+      & > ul
+        float:left
+        width: 540px
+        margin-left: 90px
+        li 
+          .date
+            width: 40px
+            text-align: right
+            margin-right: 10px
+            float: left
+          & > ul
+            float:left
+            width: 490px
+            margin-left: 50px

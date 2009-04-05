@@ -1,0 +1,47 @@
+=ui-slider
+  position: relative
+  text-align: left
+=ui-slider-handle
+  position: absolute
+  z-index: 2
+  width: 1.2em
+  height: 1.2em
+  cursor: default
+=ui-slider-range
+  position: absolute
+  z-index: 1
+  font-size: 1%
+  display: block
+  border: 0
+
+=ui-slider-horizontal
+  height: .8em
+  .ui-slider-handle
+    top: -.3em
+    margin-left: -.6em
+  .ui-slider-range
+    top: 0
+    height: 100%
+
+=ui-slider-vertical
+  width: .8em
+  height: 100%
+  .ui-slider-handle
+    left: -.3em
+    margin-left: 0
+    margin-bottom: -.6em
+  .ui-slider-range
+    left: 0
+    height: auto
+    width: 100%
+
+.ui-slider
+  +ui-slider
+.ui-slider-handle
+  +ui-slider-handle
+.ui-slider-range
+  +ui-slider-range
+.ui-slider-horizontal
+  +ui-slider-horizontal
+.ui-slider-vertical
+  +ui-slider-vertical
