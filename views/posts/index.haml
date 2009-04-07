@@ -1,4 +1,4 @@
-#"posts
+#posts
   -@posts.each do |post|
     .post
       .body
@@ -11,4 +11,4 @@
           .hour=post.published_at.strftime('%I:%M %P')
         .comment 20 have spoken
         .tags=post.tags.map{|t| link_to("##{t}", "/tag/#{t}")}.join(', ')
-        .category=link_to post.category, "/category/#{post.category}
+        .category=link_to post.category, "/category/#{post.category}"

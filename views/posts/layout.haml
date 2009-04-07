@@ -5,17 +5,15 @@
     =css_link 'compiled/screen'
     %title="BrianTheCoder - #{(@title || 'On the Edge of Sanity')}"
   %body
-    %div.container
+    .container
       #header
         .intro The Writings of
         %h1=link_to "BrianTheCoder", "/"
-        .tagline="Rocking, socking and bee bopping"
-      #hr='test'
-      #main='test'
+        .tagline=TAGLINES[rand(TAGLINES.size)]
+      #hr
+      #main=yield
       #sidebar
         =partial :archive_list
-        =partial :category_list
-        =partial :tag_list
-        =partial :recent_posts
-    =js_link :jquery,
-    =js_link :application
+        =partial :category_list, :locals => { :limit => 10 }
+        =partial :tag_list, :locals => { :limit => 10 }
+        =partial :recent_posts, :locals => { :limit => 5 }

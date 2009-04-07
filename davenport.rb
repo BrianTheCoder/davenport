@@ -33,8 +33,8 @@ class Davenport < Sinatra::Default
   
   error do
     e = request.env['sinatra.error']
-    p e.to_s
-    p e.backtrace.join('\n')
+    puts e.to_s
+    puts e.backtrace.inspect
     'Application error'
   end
   
@@ -49,16 +49,20 @@ class Davenport < Sinatra::Default
     haml :show
   end
   
-  get '/:year(/:month(/:day))' do |year, month, day|
-    @group_level = params.values.compact.size - 2
+  
+  
+  get %r{/(\d{4})(/(\d{1,2})(/(\d{2}))?)?} do |*captures|
+    year = captures[0]
+    month = captures[2]
+    day = captures[4]
     key = [year.to_i]
     key << month.to_i unless month.nil?
     key << day.to_i unless day.nil?
-    puts key.inspect
-    @posts = Post.by_archive(:group_level => @group_level, :startkey => key)
+    @group_level = key.length
+    @posts = Post.by_archive(:startkey => key)
     redirect request.referrer if @posts.nil?
     if @posts.size == 1
-      redirect url(:post, *@posts.first.path)
+      redirect "/#{@posts.first.path.join('/')}"
     end
     @date = Date.parse("#{month || 1}/#{day || 1}/#{year}")
     haml :archive

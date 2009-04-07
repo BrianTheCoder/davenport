@@ -74,6 +74,12 @@ class DateTime
   end
 end
 
+class Time
+  def to_json
+    %Q("#{strftime("%Y/%m/%d %H:%M:%S")} #{zone}")
+  end
+end
+
 class Array
   def pick
     at Kernel.rand(size)

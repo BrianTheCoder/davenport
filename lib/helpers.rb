@@ -23,14 +23,14 @@ module Sinatra
       template = :"partials/#{template}"
       if collection = opts.delete(:collection) then
         collection.inject([]) do |buffer, member|
-          buffer << erb(template, opts.merge(
+          buffer << haml(template, opts.merge(
                                     :layout => false, 
                                     :locals => {template.to_sym => member}
                                   )
                        )
         end.join("\n")
       else
-        erb(template, opts)
+        haml(template, opts)
       end
     end
     
