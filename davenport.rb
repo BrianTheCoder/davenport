@@ -1,5 +1,6 @@
 require 'rubygems'
 require 'sinatra/base'
+gem 'jchris-couchrest'
 require 'couchrest'
 require 'extlib'
 require 'stringex'
