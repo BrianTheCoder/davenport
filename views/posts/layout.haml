@@ -1,0 +1,19 @@
+!!! Strict
+%html{html_attrs}
+  %head
+    %meta{'http-equiv' => 'Content-Type', :content => 'text/html;charset=utf-8'}/
+    =css_link 'compiled/screen'
+    %title="BrianTheCoder - #{(@title || 'On the Edge of Sanity')}"
+  %body
+    .container
+      #header
+        .intro The Writings of
+        %h1=link_to "BrianTheCoder", "/"
+        .tagline=TAGLINES[rand(TAGLINES.size)]
+      #hr
+      #main=yield
+      #sidebar
+        =partial :archive_list
+        =partial :category_list, :locals => { :limit => 10 }
+        =partial :tag_list, :locals => { :limit => 10 }
+        =partial :recent_posts, :locals => { :limit => 5 }

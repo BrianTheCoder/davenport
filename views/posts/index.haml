@@ -1,0 +1,14 @@
+#posts
+  -@posts.each do |post|
+    .post
+      .body
+        %h2=link_to post.title, "/#{post.path.join('/')}"
+        .text=post.body
+      .info
+        .published_at
+          .date="#{post.published_at.strftime('%A')} the #{post.published_at.strftime('%d').to_i.ordinalize}"
+          .month=post.published_at.strftime('%B %Y')
+          .hour=post.published_at.strftime('%I:%M %P')
+        .comment 20 have spoken
+        .tags=post.tags.map{|t| link_to("##{t}", "/tag/#{t}")}.join(', ')
+        .category=link_to post.category, "/category/#{post.category}"

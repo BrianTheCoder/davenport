@@ -1,0 +1,7 @@
+-@archive = Post.by_archive_count(:reduce => true, :group => true)['rows']
+%h4 Archive
+%ul
+  -@archive.each do |row|
+    %li
+      .count=row['value']
+      =link_to Date.parse(row['key'].reverse.join('/')).strftime('%b %Y'), "/#{row['key'].join('/')}"

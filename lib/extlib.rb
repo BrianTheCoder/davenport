@@ -73,3 +73,31 @@ class DateTime
     %Q("#{strftime("%Y/%m/%d %H:%M:%S")} #{zone}")
   end
 end
+
+class Time
+  def to_json
+    %Q("#{strftime("%Y/%m/%d %H:%M:%S")} #{zone}")
+  end
+end
+
+class Array
+  def pick
+    at Kernel.rand(size)
+  end
+end
+
+class Integer
+  def of
+    (1..self).to_a.map { yield }
+  end
+end
+
+class Range
+  def pick
+    to_a.pick
+  end
+
+  def of
+    pick.of { yield }
+  end
+end
